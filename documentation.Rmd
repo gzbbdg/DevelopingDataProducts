@@ -1,0 +1,38 @@
+---
+title: "Miles per gallon calculator"
+author: "Lukasz Grzybowski"
+output: html_document
+---
+
+### Description
+Application used to calculate how far car can drive expressed by miles per gallon (US) based on transmission type, gross horsepower and weight (lb/1000). 
+
+### Arguments
+Arguments are parameters of prediction model defined by user:
+
+* transmission - a number *0* (automatic) or *1* (manual)
+
+* horsepower - a number between *52* and *335*
+  
+* weight - A number between *1.5* and *5.4*
+
+### Input
+User specify arguments by select specific value through radio buttons for transmission argument, slider input for horsepowerweight and weight argument.
+
+Selected values are displayed in summary section.
+
+### Output
+Output is predicted milles per gallon for provided transmission, horsepower and weight arguments.
+
+Prediction model based on linear regression with interaction. 
+```{r,eval=FALSE}
+lm(mpg~factor(am)+hp+wt+wt*factor(am),data=mycars)
+```
+Where mycars is mtcars dataset limited to only 4 variables (mpg, hp, wt, am).
+
+Predicted value is displayed in result section after check button click.
+
+### Used stuff
+* libraries: *slidify, stats, shiny, caret*
+
+* datasets: *mtcars*
