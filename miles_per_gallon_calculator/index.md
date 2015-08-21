@@ -53,7 +53,7 @@ min = 1.5, max = 5.4, value = 0.1)
 
 We have 2 types of output:
 
-- summary of selected options
+- summary of selected options which are refreshed with reactive way
 
 ```r
 h3("Summary:"),
